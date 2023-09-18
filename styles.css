@@ -2,3 +2,15 @@
     margin: 0;
     padding: 0;
 }
+
+#heading{
+    color: tomato;
+}
+
+.subheadings{
+    color: violet;
+}
+
+.super-subheadings{
+    color: teal;
+}
