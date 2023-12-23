@@ -12,7 +12,7 @@ function returnRating(rating) {
 export const ResCard = (props) => {
     const {resName, resRating, imgSrc, totalRatingsString, costForTwo, cuisines, resLoc} = props;
     return  (
-        <div className="flex py-3 justify-around gap-2 items-center flex-col w-[200px] font-mono res-card border rounded-lg bg-slate-200 border-slate-200">
+        <div data-testid="res-card" className="flex py-3 justify-around gap-2 items-center flex-col w-[200px] font-mono res-card border rounded-lg bg-slate-200 border-slate-200">
             <img className=" rounded-lg res-card-img w-[90%] h-[150px] object-cover" src={imgSrc} />
             <span className="res-card-head">{resName}</span>
             <span className="res-card-head text-xs"><FontAwesomeIcon icon={faLocationDot} size="xs"/> {resLoc}</span>
@@ -28,7 +28,7 @@ export const ResCard = (props) => {
 export const withIsOpenLabel = (ResCard) => {
     return (props) =>
         <div className="relative">
-            <label className="absolute border border-green-500 px-2 py-1 text-xs bg-green-500 text-white rounded-md left-[-10px] top-[-5px]">Open</label>
+            <label className="absolute border border-green-500 px-2 py-1 text-xs bg-green-500 text-white rounded-md left-[-10px] top-[-5px]" data-testid="open-label">Open</label>
             <ResCard type="data" costForTwo={props.info.costForTwo} resName={props.info.name} resLoc={props.info.areaName} imgSrc={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${props.info.cloudinaryImageId}`} resRating={props.info.avgRating} totalRatingsString={props.info.totalRatingsString} cuisines={props.info.cuisines.join(", ")}/>
         </div>
 };
