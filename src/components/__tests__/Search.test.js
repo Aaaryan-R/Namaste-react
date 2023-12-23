@@ -17,16 +17,16 @@ global.fetch = jest.fn(() => {
     });
 });
 
-it("should search resList for 'Burger'!", async () => {
-    await act(async () => render(<BrowserRouter><Body/></BrowserRouter>));
+test("should search resList for 'Chai'!", async () => {
+    await act(async () => render(<BrowserRouter><Body /></BrowserRouter>));
 
     const searchBtn = screen.getByRole("button", { name: "SEARCH"});
     const searchIn = screen.getByTestId("search-inp");
 
-    fireEvent.change(searchIn, { target : { value: "burger" }});
+    fireEvent.change(searchIn, { target : { value: "chai" }});
     fireEvent.click(searchBtn);
 
     const cards = screen.getAllByTestId("res-card");
     console.log(cards.length);
-    expect(cards.length).toBe(2);
+    expect(cards.length).toBe(1);
 });

@@ -18,7 +18,7 @@ global.fetch = jest.fn(() => {
 });
 
 it("should return cards of top rated restaurants!", async () => {
-    await act(async () => render(<BrowserRouter><Body/></BrowserRouter>));
+    await act(async () => render(<BrowserRouter><Body /></BrowserRouter>));
 
     const topRatedBtn = screen.getByTestId("top-rated-btn");
     
@@ -26,5 +26,5 @@ it("should return cards of top rated restaurants!", async () => {
 
     const cards = screen.getAllByTestId("res-card");
     console.log(cards.length);
-    expect(cards.length).toBe(15);
+    expect(cards.length).toBe(11);
 });

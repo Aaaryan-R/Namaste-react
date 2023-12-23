@@ -20,8 +20,9 @@ export const Body = () => {
             return data.json();
         })
         .then((json) => {
-            setRestList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-            setFilteredList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            console.log(json);
+            setRestList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         })
         .catch((error) => {
             console.log(error);
