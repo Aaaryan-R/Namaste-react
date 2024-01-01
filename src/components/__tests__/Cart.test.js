@@ -19,7 +19,7 @@ global.fetch = jest.fn(() => {
     });
 });
 
-it("should load cart component and add the items in the cart", async () => {
+test("should load cart component and add the items in the cart", async () => {
     await act(async () => render(<BrowserRouter><Provider store={appStore}><Header /><Cart /><Menu /></Provider></BrowserRouter>));
     const accordianHeader = screen.getByText("Recommended");
     fireEvent.click(accordianHeader);

@@ -1,4 +1,4 @@
-import { fireEvent, render,screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Body } from "../../components/Body";
 import "@testing-library/jest-dom";
 import { MOCK_RESLIST } from "../../utils/mockData";
@@ -17,7 +17,7 @@ global.fetch = jest.fn(() => {
     });
 });
 
-it("should return cards of top rated restaurants!", async () => {
+test("should return cards of top rated restaurants!", async () => {
     await act(async () => render(<BrowserRouter><Body /></BrowserRouter>));
 
     const topRatedBtn = screen.getByTestId("top-rated-btn");
